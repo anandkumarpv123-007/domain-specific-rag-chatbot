@@ -1,0 +1,181 @@
+ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+Artificial Intelligence, commonly called AI, is a branch of computer science that focuses on creating systems capable of performing tasks that normally require human intelligence. These tasks include learning, reasoning, problem solving, understanding language, recognizing images, and making decisions.
+
+AI systems can be designed to analyze large amounts of information, identify patterns, and make predictions. Examples of AI applications include virtual assistants, recommendation systems, fraud detection, autonomous vehicles, medical image analysis, and language translation.
+
+Machine Learning is a major branch of Artificial Intelligence. Machine Learning allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every possible situation.
+
+A Machine Learning model learns from examples. The quality and quantity of training data can have a significant effect on the performance of the model.
+
+There are three major types of Machine Learning: supervised learning, unsupervised learning, and reinforcement learning.
+
+SUPERVISED LEARNING
+
+Supervised learning uses labeled data for training. Each training example contains an input and a known expected output. The model learns the relationship between the input and output and uses this relationship to make predictions on new data.
+
+Classification and regression are two common supervised learning tasks.
+
+Classification is used when the output belongs to a category. Examples include identifying whether an email is spam or not spam, classifying images, and predicting whether a customer will leave a service.
+
+Regression is used when the output is a continuous numerical value. Examples include predicting house prices, estimating sales, and forecasting temperature.
+
+UNSUPERVISED LEARNING
+
+Unsupervised learning works with data that does not contain predefined labels. The algorithm attempts to discover hidden patterns or structures in the data.
+
+Clustering is a common unsupervised learning technique. Clustering groups similar data points together.
+
+For example, a company can use clustering to group customers based on purchasing behavior. This can help the company understand different customer segments.
+
+Dimensionality reduction is another unsupervised learning technique. It reduces the number of features while attempting to preserve important information in the dataset.
+
+REINFORCEMENT LEARNING
+
+Reinforcement learning is a type of Machine Learning in which an agent learns by interacting with an environment.
+
+The agent performs actions and receives rewards or penalties based on those actions. Over time, the agent learns a strategy that attempts to maximize its total reward.
+
+Reinforcement learning can be used in robotics, game playing, resource management, and autonomous systems.
+
+TRAINING AND TESTING
+
+A Machine Learning dataset is commonly divided into training data and testing data.
+
+Training data is used by the model to learn patterns. Testing data is used to evaluate how well the trained model performs on previously unseen examples.
+
+A validation dataset can also be used during model development to help select model parameters and evaluate different approaches.
+
+Overfitting occurs when a model learns the training data too closely and performs poorly on new data.
+
+Underfitting occurs when a model is too simple to capture important patterns in the data.
+
+NATURAL LANGUAGE PROCESSING
+
+Natural Language Processing, or NLP, is an area of Artificial Intelligence that focuses on enabling computers to work with human language.
+
+NLP applications include text classification, sentiment analysis, machine translation, speech recognition, question answering, text summarization, and chatbots.
+
+Large Language Models, commonly called LLMs, are AI models trained on very large collections of text. They can generate and understand natural language and can be used for tasks such as answering questions, summarizing documents, generating text, and assisting with programming.
+
+RETRIEVAL-AUGMENTED GENERATION
+
+Retrieval-Augmented Generation, or RAG, is a technique that combines information retrieval with language generation.
+
+A RAG system first retrieves relevant information from a collection of documents. The retrieved information is then provided to a language model as context.
+
+The language model uses this context to generate an answer to the user's question.
+
+A typical RAG pipeline contains several stages: document loading, text cleaning, text splitting, embedding generation, vector storage, similarity search, context construction, and answer generation.
+
+RAG is useful when an application needs to answer questions using information from a specific collection of documents.
+
+TEXT CHUNKING
+
+Large documents are usually divided into smaller sections called chunks before they are converted into embeddings.
+
+Chunking makes it easier to retrieve specific parts of a document when a user asks a question.
+
+Chunk size determines approximately how much text is included in each chunk.
+
+Chunk overlap means that a portion of text is shared between neighboring chunks. Overlap can help preserve information that occurs near chunk boundaries.
+
+EMBEDDINGS
+
+An embedding is a numerical representation of information such as text.
+
+Text with similar meanings can have similar vector representations. Embeddings make it possible to compare pieces of text mathematically.
+
+In a RAG system, document chunks are converted into embeddings and stored in a vector index.
+
+When a user asks a question, the question is also converted into an embedding. The system compares the question vector with document vectors and retrieves the most relevant chunks.
+
+FAISS
+
+FAISS stands for Facebook AI Similarity Search. It is a library designed for efficient similarity search and clustering of dense vectors.
+
+FAISS can store vector representations and quickly search for vectors that are similar to a query vector.
+
+In a RAG application, FAISS can be used as the vector search component. Document embeddings are added to a FAISS index, and the user's question is converted into an embedding before searching the index.
+
+COSINE SIMILARITY
+
+Cosine similarity measures the similarity between two vectors based on the angle between them.
+
+A higher cosine similarity generally indicates that two vectors point in similar directions.
+
+Vector search systems can use similarity scores to rank retrieved documents or chunks.
+
+LANGCHAIN
+
+LangChain is a framework for developing applications that use large language models.
+
+It provides components that can help connect language models with prompts, retrievers, tools, data sources, and application logic.
+
+LangChain can be used to build applications such as question-answering systems, chatbots, document assistants, and RAG applications.
+
+GROQ
+
+Groq provides APIs for running large language models.
+
+In this project, the Groq API is used to send the retrieved document context and the user's question to a language model.
+
+The model generates an answer based on the supplied document context.
+
+DOCUMENT QUESTION ANSWERING
+
+A document question-answering system allows users to ask questions about uploaded documents.
+
+The system first processes the documents and creates searchable representations.
+
+When a question is asked, relevant portions of the uploaded documents are retrieved.
+
+The retrieved information is then supplied to the language model, which generates a grounded response.
+
+GROUNDING
+
+Grounding means generating an answer based on a specified source of information.
+
+In a RAG application, grounding helps reduce unsupported answers by instructing the language model to use the retrieved document context.
+
+If the requested information is not present in the retrieved documents, the system can inform the user that the information could not be found.
+
+BENEFITS OF RAG
+
+RAG can help applications use information from private or specialized documents.
+
+It can reduce the need to retrain a language model whenever the knowledge base changes.
+
+RAG can also provide retrieved sources along with answers, making it easier for users to understand where the information came from.
+
+LIMITATIONS OF RAG
+
+RAG systems depend on the quality of document retrieval.
+
+If the relevant information is not retrieved, the language model may not have enough context to answer the question correctly.
+
+Poorly chosen chunk sizes can also reduce retrieval quality.
+
+The quality of embeddings, vector search, document extraction, and the language model can all affect the final response.
+
+RAG APPLICATION WORKFLOW
+
+A complete document RAG application can be summarized as follows.
+
+First, the user uploads one or more documents.
+
+Second, the application extracts readable text from the documents.
+
+Third, the text is cleaned and divided into smaller chunks.
+
+Fourth, an embedding model converts each chunk into a numerical vector.
+
+Fifth, the vectors are stored in a FAISS index.
+
+Sixth, the user's question is converted into a vector and compared with the stored vectors.
+
+Seventh, the most relevant chunks are retrieved.
+
+Finally, the retrieved context and the user's question are sent to the Groq language model, which generates the final answer.
+
+This workflow allows a chatbot to answer questions using information from uploaded documents rather than relying only on the general knowledge of the language model.

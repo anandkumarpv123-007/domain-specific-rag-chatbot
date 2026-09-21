@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.local
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Vector Store / Indexes
+vector_store/saved_index/
+*.index
+*.pkl
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
