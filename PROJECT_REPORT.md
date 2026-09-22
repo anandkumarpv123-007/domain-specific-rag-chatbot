@@ -1,7 +1,7 @@
 # PROJECT REPORT: DOMAIN-SPECIFIC RAG CHATBOT FOR PDF QUESTION ANSWERING
 
-**Author / Project Student**: AI Engineering Team  
-**Repository**: `finla_AI(Repo)`  
+**Author / Project Student**: Anandkumar V
+**Repository**: `domain-specific-rag-chatbot`  
 **Date**: September 2026  
 
 ---
